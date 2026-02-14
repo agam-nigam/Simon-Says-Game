@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says Game</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-    <header>
-        <h1>Simon Says Game</h1>
-        <h2>Press Start to begin</h2>
-    </header>
-
-    <main class="game-container">
-        <button id="startBtn" class="start-btn">Start Game</button>
-
-        <div class="board">
-            <div class="row">
-                <div id="pink" class="btn pink"></div>
-                <div id="orange" class="btn orange"></div>
-            </div>
-
-            <div class="row">
-                <div id="teal" class="btn teal"></div>
-                <div id="blue" class="btn blue"></div>
-            </div>
+    <h1>Simon Says Game</h1>
+    <h2>Press start button to begin.</h2>
+    <button class="start-btn">Start Game</button>
+    <div class="outer">
+        <div class="line-one">
+            <div class="pink btn" id="pink"></div>
+            <div class="orange btn" id="orange"></div>
         </div>
+        <div class="line-two">
+            <div class="teal btn" id="teal"></div>
+            <div class="blue btn" id="blue"></div>
+        </div>
+    </div>
 
-        <section class="score-board">
-            <div class="score-item">
-                <span>Current</span>
-                <span id="current">0</span>
-            </div>
-
-            <div class="score-item">
-                <span>Highest</span>
-                <span id="highest">0</span>
-            </div>
-        </section>
-    </main>
+    <section class="score-board">
+        <h3 class="score">
+            <span>Current Score: </span><br />
+            <span id="current">0</span>
+        </h3>
+        <h3 class="score">
+            <span>Highest Score: </span><br />
+            <span id="hScore">0</span>
+        </h3>
+    </section>
 
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,174 +7,189 @@
 }
 
 body {
-    font-family: "Segoe UI", sans-serif;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    background: radial-gradient(circle at top, #1e293b, #0f172a);
+    background: radial-gradient(circle at top, #1f4068 0%, #1b1b2f 60%, #0f0f1a 100%);
     color: #ffffff;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-}
-
-h2 {
-    font-weight: 400;
-    opacity: 0.85;
-    margin-bottom: 30px;
+    color: #fff;
+    padding: 20px;
     text-align: center;
 }
 
-.game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* ---------------- HEADINGS ---------------- */
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
+h2 {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* ---------------- START BUTTON ---------------- */
+
 .start-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 25px;
+    position: relative;
+    padding: 14px 40px;
     border: none;
+    border-radius: 60px;
     cursor: pointer;
-
-    background: linear-gradient(145deg, #22c55e, #16a34a);
-    color: white;
-
-    margin-bottom: 25px;
-
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    transition: 0.2s ease;
+    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .start-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px #ff00cc, 0 0 50px #3333ff;
 }
 
 .start-btn:active {
     transform: scale(0.95);
 }
 
-.board {
+.start-btn:hover::before {
+    left: 100%;
+}
+
+/* ---------------- GAME BOARD ---------------- */
+
+.outer {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    align-items: center;
+    gap: clamp(10px, 2vw, 20px);
+    padding: clamp(15px, 3vw, 30px);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-.row {
+.line-one,
+.line-two {
     display: flex;
-    gap: 25px;
+    gap: clamp(10px, 2vw, 25px);
 }
+
+/* ---------------- GAME BUTTONS ---------------- */
 
 .btn {
-    height: 160px;
-    width: 160px;
-    border-radius: 25px;
+    height: clamp(90px, 18vw, 180px);
+    width: clamp(90px, 18vw, 180px);
+    border-radius: 25%;
     cursor: pointer;
-
-    border: 4px solid rgba(255, 255, 255, 0.15);
-
-    transition: 
-        transform 0.15s ease,
-        box-shadow 0.3s ease,
-        filter 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.15s ease;
+    transform-style: preserve-3d;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        inset 0 5px 10px rgba(255, 255, 255, 0.2),
+        inset 0 -5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
+    box-shadow:
+        0 25px 45px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(255, 255, 255, 0.2);
 }
 
 .btn:active {
-    transform: scale(0.95);
+    transform: scale(0.97);
+}
+
+.btn:hover::before {
+    top: 100%;
+    left: 100%;
 }
 
 .pink {
-    background: linear-gradient(145deg, #ff4d94, #d6336c);
-    box-shadow: 0 0 25px rgba(255, 77, 148, 0.5);
+    background: linear-gradient(145deg, #ff4e8a, #c9184a);
+    box-shadow:
+        0 15px 30px rgba(255, 78, 138, 0.4),
+        inset 0 5px 10px rgba(255, 255, 255, 0.2);
 }
 
 .orange {
-    background: linear-gradient(145deg, #ff9f43, #ff6b00);
-    box-shadow: 0 0 25px rgba(255, 159, 67, 0.5);
+    background: linear-gradient(145deg, #ff9f1c, #ff6f00);
+    box-shadow:
+        0 15px 30px rgba(255, 159, 28, 0.4),
+        inset 0 5px 10px rgba(255, 255, 255, 0.2);
 }
 
 .teal {
-    background: linear-gradient(145deg, #2dd4bf, #0ea5a5);
-    box-shadow: 0 0 25px rgba(45, 212, 191, 0.5);
+    background: linear-gradient(145deg, #2ec4b6, #1b9aaa);
+    box-shadow:
+        0 15px 30px rgba(46, 196, 182, 0.4),
+        inset 0 5px 10px rgba(255, 255, 255, 0.2);
 }
 
 .blue {
-    background: linear-gradient(145deg, #60a5fa, #2563eb);
-    box-shadow: 0 0 25px rgba(96, 165, 250, 0.5);
+    background: linear-gradient(145deg, #4f8ef7, #3a5cff);
+    box-shadow:
+        0 15px 30px rgba(79, 142, 247, 0.4),
+        inset 0 5px 10px rgba(255, 255, 255, 0.2);
 }
 
 .flash {
-    transform: scale(1.12);
-    filter: brightness(1.6);
+    animation: flashEffect 0.2s ease;
 }
+
+@keyframes flashEffect {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(0.9);
+        filter: brightness(1.6);
+        box-shadow: 0 0 35px #ffffff;
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* ---------------- SCORE BOARD ---------------- */
 
 .score-board {
-    margin-top: 35px;
+    margin-top: clamp(20px, 4vw, 40px);
     display: flex;
-    gap: 50px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: clamp(15px, 3vw, 30px);
 }
 
-.score-item {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 15px 35px;
-    border-radius: 15px;
-    text-align: center;
+.score {
+    background: rgba(255, 255, 255, 0.15);
+    padding: clamp(0.8rem, 2vw, 1.2rem);
+    border-radius: 20px;
+    min-width: 130px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
 }
 
-.score-item span:first-child {
-    display: block;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-.score-item span:last-child {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-@media (max-width: 768px) {
-    .btn {
-        height: 120px;
-        width: 120px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn {
-        height: 95px;
-        width: 95px;
-        border-radius: 18px;
-    }
-
-    .row {
-        gap: 15px;
-    }
-
-    .board {
-        gap: 15px;
-    }
-
-    .score-board {
-        gap: 20px;
-    }
+.score span {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 600;
 }
