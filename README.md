@@ -10,7 +10,7 @@ Each level adds one more step --- how long can you survive? 🚀
 
 ## 🌐 Live Demo
 
-🔗 https://agam507.github.io/Simon-Says-Game/
+🔗 https://agam-nigam.github.io/Simon-Says-Game/
 
 ---
 
